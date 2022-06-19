@@ -33,7 +33,7 @@ namespace CalculatorWebService
         {
             int Result = FirstNum + SecondNum;
             string operation = FirstNum.ToString() + " + " + SecondNum.ToString() + " = " + Result.ToString();
-            AddToListOfCalculations(operation);
+            AddToListOfCalculations(operation); //comment this line to do test cases
             return Result;
         }
         [WebMethod(EnableSession = true, CacheDuration = 20)]
@@ -41,7 +41,7 @@ namespace CalculatorWebService
         {
             int Result = FirstNum - SecondNum;
             string operation = FirstNum.ToString() + " - " + SecondNum.ToString() + " = " + Result.ToString();
-            AddToListOfCalculations(operation);
+            AddToListOfCalculations(operation); //comment this line to do test cases
             return Result;
         }
         [WebMethod(EnableSession = true, CacheDuration = 20)]
@@ -49,7 +49,7 @@ namespace CalculatorWebService
         {
             int Result = FirstNum * SecondNum;
             string operation = FirstNum.ToString() + " * " + SecondNum.ToString() + " = " + Result.ToString();
-            AddToListOfCalculations(operation);
+            AddToListOfCalculations(operation); //comment this line to do test cases
             return Result;
         }
         [WebMethod(EnableSession = true, CacheDuration = 20)]
@@ -60,7 +60,7 @@ namespace CalculatorWebService
             {
                 Result = FirstNum / SecondNum;
                 string operation = FirstNum.ToString() + " / " + SecondNum.ToString() + " = " + Result.ToString();
-                AddToListOfCalculations(operation);
+                AddToListOfCalculations(operation); //comment this line to do test cases
             }
             return Result;
         }
