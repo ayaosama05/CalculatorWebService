@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AddToListOfCalculations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="valueToAdd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddToListOfCalculationsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddNumbers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FirstNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SecondNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddNumbersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddNumbersResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubtractNumbers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FirstNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SecondNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubtractNumbersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubtractNumbersResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MultiplyNumbers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FirstNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SecondNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MultiplyNumbersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MultiplyNumbersResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DivideNumbers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FirstNum" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SecondNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DivideNumbersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DivideNumbersResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPreviousCalculations">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllPreviousCalculationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllPreviousCalculationsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddToListOfCalculationsSoapIn">
+    <wsdl:part name="parameters" element="tns:AddToListOfCalculations" />
+  </wsdl:message>
+  <wsdl:message name="AddToListOfCalculationsSoapOut">
+    <wsdl:part name="parameters" element="tns:AddToListOfCalculationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddNumbersSoapIn">
+    <wsdl:part name="parameters" element="tns:AddNumbers" />
+  </wsdl:message>
+  <wsdl:message name="AddNumbersSoapOut">
+    <wsdl:part name="parameters" element="tns:AddNumbersResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubtractNumbersSoapIn">
+    <wsdl:part name="parameters" element="tns:SubtractNumbers" />
+  </wsdl:message>
+  <wsdl:message name="SubtractNumbersSoapOut">
+    <wsdl:part name="parameters" element="tns:SubtractNumbersResponse" />
+  </wsdl:message>
+  <wsdl:message name="MultiplyNumbersSoapIn">
+    <wsdl:part name="parameters" element="tns:MultiplyNumbers" />
+  </wsdl:message>
+  <wsdl:message name="MultiplyNumbersSoapOut">
+    <wsdl:part name="parameters" element="tns:MultiplyNumbersResponse" />
+  </wsdl:message>
+  <wsdl:message name="DivideNumbersSoapIn">
+    <wsdl:part name="parameters" element="tns:DivideNumbers" />
+  </wsdl:message>
+  <wsdl:message name="DivideNumbersSoapOut">
+    <wsdl:part name="parameters" element="tns:DivideNumbersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPreviousCalculationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPreviousCalculations" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPreviousCalculationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllPreviousCalculationsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CalculationsSoap">
+    <wsdl:operation name="AddToListOfCalculations">
+      <wsdl:input message="tns:AddToListOfCalculationsSoapIn" />
+      <wsdl:output message="tns:AddToListOfCalculationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNumbers">
+      <wsdl:input message="tns:AddNumbersSoapIn" />
+      <wsdl:output message="tns:AddNumbersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubtractNumbers">
+      <wsdl:input message="tns:SubtractNumbersSoapIn" />
+      <wsdl:output message="tns:SubtractNumbersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MultiplyNumbers">
+      <wsdl:input message="tns:MultiplyNumbersSoapIn" />
+      <wsdl:output message="tns:MultiplyNumbersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DivideNumbers">
+      <wsdl:input message="tns:DivideNumbersSoapIn" />
+      <wsdl:output message="tns:DivideNumbersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPreviousCalculations">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method gets all previous calculation you've did</wsdl:documentation>
+      <wsdl:input message="tns:GetAllPreviousCalculationsSoapIn" />
+      <wsdl:output message="tns:GetAllPreviousCalculationsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculationsSoap" type="tns:CalculationsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddToListOfCalculations">
+      <soap:operation soapAction="http://tempuri.org/AddToListOfCalculations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNumbers">
+      <soap:operation soapAction="http://tempuri.org/AddNumbers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubtractNumbers">
+      <soap:operation soapAction="http://tempuri.org/SubtractNumbers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MultiplyNumbers">
+      <soap:operation soapAction="http://tempuri.org/MultiplyNumbers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DivideNumbers">
+      <soap:operation soapAction="http://tempuri.org/DivideNumbers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPreviousCalculations">
+      <soap:operation soapAction="http://tempuri.org/GetAllPreviousCalculations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CalculationsSoap12" type="tns:CalculationsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddToListOfCalculations">
+      <soap12:operation soapAction="http://tempuri.org/AddToListOfCalculations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNumbers">
+      <soap12:operation soapAction="http://tempuri.org/AddNumbers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubtractNumbers">
+      <soap12:operation soapAction="http://tempuri.org/SubtractNumbers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MultiplyNumbers">
+      <soap12:operation soapAction="http://tempuri.org/MultiplyNumbers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DivideNumbers">
+      <soap12:operation soapAction="http://tempuri.org/DivideNumbers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPreviousCalculations">
+      <soap12:operation soapAction="http://tempuri.org/GetAllPreviousCalculations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Calculations">
+    <wsdl:port name="CalculationsSoap" binding="tns:CalculationsSoap">
+      <soap:address location="http://localhost:62608/Calculations.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CalculationsSoap12" binding="tns:CalculationsSoap12">
+      <soap12:address location="http://localhost:62608/Calculations.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
